@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listview/UserPost.dart';
 import 'package:listview/data_source.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,6 +31,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Dynamic List View'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UserPost()));
+                },
+                icon: Icon(Icons.change_circle))
+          ],
         ),
         body: ListView.builder(
             itemCount: _items.length,

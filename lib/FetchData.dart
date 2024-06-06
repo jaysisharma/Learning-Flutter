@@ -12,7 +12,7 @@ class ApiService {
       List jsonRespone = jsonDecode(response.body);
       return jsonRespone.map((post) => Posts.fromJson(post)).toList();
     } else {
-      throw Exception('Failed to load Posts');
+      throw Exception('Failed to load Post');
     }
   }
 }
